@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+@model RootObject
+
+
+
+<div class="container">
+    <div class="detail-content" style="border:1px solid #eaf6f6;padding: 30px; ">
+         <div class="row justify-content-between align-items-center">
+        <div class="col-lg-4">
+            <div class="movie-img">
+                <img src="@Model.Poster"/>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="movie-info text-left">
+                <p><b>Title: </b> @Model.Title</p> 
+                <p><b>Year: </b> @Model.Year</p>
+                <p><b>Genre: </b> @Model.Genre</p>
+                <p><b>Rated: </b> @Model.Rated</p>
+                <p><b>Description: </b> @Model.Plot</p>
+               <button class="btn btn-warning mt-2">Order</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
