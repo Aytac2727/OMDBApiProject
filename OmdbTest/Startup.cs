@@ -29,7 +29,7 @@ namespace OmdbTest
             services.AddHttpClient("API Client", client =>
             {
             
-                client.BaseAddress = new Uri("http://www.omdbapi.com/?i=tt3896198&apikey=729623cd");
+                client.BaseAddress = new Uri("http://www.omdbapi.com/&apikey=729623cd");
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
             }).AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
             {

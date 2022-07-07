@@ -59,9 +59,11 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  box-sizing: border-box;
+    /* Margin bottom by footer height */
+    background-image: url("/img/contact-bg.jpg");
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
 }
 .footer {
   position: absolute;

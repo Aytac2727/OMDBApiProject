@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OmdbTest.Models
 {
     [System.Serializable]
     public class RootObject
     {
-    //  public List<Movie> Movies { get; set; }  
+        //  public list<movie> movies { get; set; }  
+
+        //}
+        //public class movie
+        //{
         
-    //}
-    //public class Movie
-    //{
         public string Title { get; set; }
         public string Year { get; set; }
         public string Rated { get; set; }
