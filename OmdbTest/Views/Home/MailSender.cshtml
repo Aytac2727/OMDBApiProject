@@ -1,0 +1,30 @@
+﻿@model OmdbTest.Models.Mail
+
+@{
+    ViewData["Title"] = "MailSender";
+}
+
+@using(Html.BeginForm("MailSender","Home", FormMethod.Post))
+{
+    <form class="row g-3">
+  <div class="col-md-6">
+    <label style="color:white" for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" name="To" asp-for="@Model.To" required>
+  </div>
+  <div class="col-12">
+    <label style="color:white" for="inputAddress" class="form-label">Subject</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Ad, Soyad" name="Fullname" asp-for="@Model.Fullname" required>
+  </div>
+ <div class="col-12 mb-3">
+  <label style="color:white" for="exampleFormControlTextarea1" class="form-label">Add Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Message" asp-for="@Model.Message"></textarea>
+</div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-warning">Send</button>
+  </div>
+</form>
+}
+
+
+

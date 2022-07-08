@@ -3,6 +3,7 @@
 }
 @model RootObject
 
+
 <div class="container">
 
     <form class="form-inline" asp-controller="Home" asp-action="Index" method="get">
@@ -10,26 +11,25 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 
-    @if(Model != null)
+    @if (Model != null)
     {
-          <div class="row">
-      
-             <div class="col-lg-3">
-          <div class="card shadow-sm">
-              <img height="400" src="@Model.Poster">
-            <div class="card-body">
-              <h5 class="card-text"> @Model.Title</h5>
-              <p class="card-text"> @Model.Year</p>  
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a asp-controller="Home" asp-action="Detail" asp-route-id="@Model.imdbID" type="submit" class="btn btn-outline-warning">View</a>
-                  <button type="button" class="btn btn-warning">Order</button>
-                </div>            
-              </div>
+        <div class="row">      
+            <div class="col-lg-3">
+                <div class="card shadow-sm">
+                    <img height="400" src="@Model.Poster">
+                    <div class="card-body">
+                        <h5 class="card-text"> @Model.Title</h5>
+                        <p class="card-text"> @Model.Year</p>  
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a asp-controller="Home" asp-action="Detail" asp-route-id="@Model.imdbID" type="submit" class="btn btn-outline-warning">View</a>
+                                <a asp-controller="Home" asp-action="MailSender" type="submit" class="btn btn-outline-warning">Order</a>
+                            </div>            
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-    </div>
     }
-  
+
 </div>

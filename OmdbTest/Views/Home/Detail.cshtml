@@ -21,7 +21,7 @@
                 <p><b>Genre: </b> @Model.Genre</p>
                 <p><b>Rated: </b> @Model.Rated</p>
                 <p><b>Description: </b> @Model.Plot</p>
-               <button class="btn btn-warning mt-2">Order</button>
+               <a asp-controller="Home" asp-action="MailSender" class="btn btn-warning mt-2">Order</a>
             </div>
         </div>
     </div>

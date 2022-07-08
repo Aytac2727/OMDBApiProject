@@ -25,6 +25,10 @@ namespace OmdbTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //var emailConfiguration = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
+            //services.AddSingleton(emailConfiguration);
+
             //New added by Aitaj
             services.AddHttpClient("API Client", client =>
             {

@@ -1,0 +1,10 @@
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\bin\Debug\netcoreapp3.1\EmailServicee.deps.json
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\bin\Debug\netcoreapp3.1\EmailServicee.dll
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\bin\Debug\netcoreapp3.1\EmailServicee.pdb
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.csproj.AssemblyReference.cache
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.AssemblyInfoInputs.cache
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.AssemblyInfo.cs
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.csproj.CoreCompileInputs.cache
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.dll
+C:\Users\msps.intern.1\source\repos\OmdbTest\EmailServicee\obj\Debug\netcoreapp3.1\EmailServicee.pdb

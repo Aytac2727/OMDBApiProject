@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using Newtonsoft.Json;
 using OmdbTest.Models;
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace OmdbTest.Controllers
@@ -14,6 +18,7 @@ namespace OmdbTest.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
         public static string movieId;
+        public static string movieTitle;
 
         public HomeController(ILogger<HomeController> logger, IHttpClientFactory httpClientFactory)
         {
@@ -54,15 +59,22 @@ namespace OmdbTest.Controllers
             return null;
         }
 
+        
         [HttpGet]
         public async Task<IActionResult> Index(string SearchString)
         {
-            var model = await GetMovieInfo(SearchString);
-            movieId = model.imdbID;
+            if (ModelState.IsValid)
+            {
+                var model = await GetMovieInfo(SearchString);
+                movieId = model.imdbID;
+                movieTitle = model.Title;
+                return View(model);
+            }
 
-            return View(model);
-            
+            return View("");
         }
+
+
         [HttpGet]
         public async Task<IActionResult> Detail(string imdbID)
         {
@@ -70,6 +82,39 @@ namespace OmdbTest.Controllers
          
             return View(model);
             
+        }
+
+        public IActionResult MailSender()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult MailSender(Mail mail)
+        {
+            using(MailMessage message = new MailMessage(mail.FromEmail, mail.To))
+            {
+                message.Subject = movieTitle;
+                message.Body =  $"Hörmətli {mail.Fullname}, sifarişiniz qəbul olundu. Artıq  {movieTitle} filmini istədiyiniz zaman izləyə bilərsiniz. \nBizi seçdiyiniz üçün təşəkkürlər!";
+                message.IsBodyHtml = false;
+
+                SmtpClient smtp = new SmtpClient()
+                {
+                    Host = "172.23.0.55",
+                    Port = 25,
+                    EnableSsl = false,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential()
+                    {
+                        UserName = "e-manat\\nabi.huseynov",
+                        Password = "5663255Emanat!$"
+                    }                   
+                };
+                smtp.Send(message);
+            }
+           // return View();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()
